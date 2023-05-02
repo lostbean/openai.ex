@@ -3,7 +3,7 @@ defmodule OpenAI.Engines do
   alias OpenAI.Client
   alias OpenAI.Config
 
-  @engines_base_url "/v1/engines"
+  @engines_base_url "/engines"
 
   def url(), do: @engines_base_url
   def url(engine_id), do: "#{@engines_base_url}/#{engine_id}"

@@ -3,7 +3,7 @@ defmodule OpenAI.Embeddings do
   alias OpenAI.Client
   alias OpenAI.Config
 
-  @embeddings_base_url "/v1/embeddings"
+  @embeddings_base_url "/embeddings"
 
   def url(), do: @embeddings_base_url
 

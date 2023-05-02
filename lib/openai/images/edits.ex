@@ -3,7 +3,7 @@ defmodule OpenAI.Images.Edits do
   alias OpenAI.Client
   alias OpenAI.Config
 
-  @base_url "/v1/images/edits"
+  @base_url "/images/edits"
 
   def url(), do: @base_url
 

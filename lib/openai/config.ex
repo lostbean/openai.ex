@@ -7,16 +7,22 @@ defmodule OpenAI.Config do
   defstruct api_key: nil,
             organization_key: nil,
             http_options: nil,
-            api_url: nil
+            api_url: nil,
+            azure_deployment_id: nil,
+            azure_api_version: nil
 
   use GenServer
 
   @openai_url "https://api.openai.com"
 
+  @azure_api_version "2022-12-01"
+
   @config_keys [
     :api_key,
     :organization_key,
-    :http_options
+    :http_options,
+    :azure_deployment_id,
+    :azure_api_version
   ]
 
   def start_link(opts), do: GenServer.start_link(__MODULE__, opts, name: __MODULE__)
@@ -27,13 +33,16 @@ defmodule OpenAI.Config do
       @config_keys
       |> Enum.map(fn key -> {key, get_config_value(key)} end)
       |> Map.new()
-
     {:ok, config}
   end
 
   # API Key
   def api_key, do: get_config_value(:api_key)
   def org_key, do: get_config_value(:organization_key)
+
+  # Azure API
+  def azure_deployment_id, do: get_config_value(:azure_deployment_id)
+  def azure_api_version, do: get_config_value(:azure_api_version, @azure_api_version)
 
   # API Url
   def api_url, do: get_config_value(:api_url, @openai_url)

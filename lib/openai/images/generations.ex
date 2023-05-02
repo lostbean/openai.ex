@@ -3,7 +3,7 @@ defmodule OpenAI.Images.Generations do
   alias OpenAI.Client
   alias OpenAI.Config
 
-  @base_url "/v1/images/generations"
+  @base_url "/images/generations"
 
   def url(), do: @base_url
 

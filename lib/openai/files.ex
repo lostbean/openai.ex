@@ -3,7 +3,7 @@ defmodule OpenAI.Files do
   alias OpenAI.Client
   alias OpenAI.Config
 
-  @files_base_url "/v1/files"
+  @files_base_url "/files"
 
   def url(), do: @files_base_url
   def url(file_id), do: "#{@files_base_url}/#{file_id}"

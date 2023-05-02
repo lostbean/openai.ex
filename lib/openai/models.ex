@@ -3,7 +3,7 @@ defmodule OpenAI.Models do
   alias OpenAI.Client
   alias OpenAI.Config
 
-  @models_base_url "/v1/models"
+  @models_base_url "/models"
 
   def url(), do: @models_base_url
   def url(model_id), do: "#{@models_base_url}/#{model_id}"

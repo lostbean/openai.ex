@@ -3,7 +3,7 @@ defmodule OpenAI.Chat do
   alias OpenAI.Client
   alias OpenAI.Config
 
-  @base_url "/v1/chat/completions"
+  @base_url "/chat/completions"
 
   def url(), do: @base_url
 

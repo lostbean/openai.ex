@@ -3,7 +3,7 @@ defmodule OpenAI.Moderations do
   alias OpenAI.Client
   alias OpenAI.Config
 
-  @moderations_base_url "/v1/moderations"
+  @moderations_base_url "/moderations"
 
   def url(), do: @moderations_base_url
 
